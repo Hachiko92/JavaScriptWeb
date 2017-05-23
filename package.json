@@ -1,0 +1,26 @@
+{
+  "name": "javascriptweb",
+  "version": "1.0.0",
+  "description": "JavaScript & JQuery en la web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hachiko92/JavaScriptWeb.git"
+  },
+  "keywords": [
+    "JS",
+    "JQuery"
+  ],
+  "author": "Eleonora Franchini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hachiko92/JavaScriptWeb/issues"
+  },
+  "homepage": "https://github.com/Hachiko92/JavaScriptWeb#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

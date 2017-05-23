@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: palegoldenrod;
+}
+
+article{
+    margin: 1em auto;
+    width: 80%;
+}
+form{
+    margin-bottom: 40px;
+}
