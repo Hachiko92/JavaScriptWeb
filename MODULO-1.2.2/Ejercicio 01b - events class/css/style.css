@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    /* emmet --> w80% */
+    width: 80%;
+    margin: 1em auto;
+    background-color: palegoldenrod;
+}
