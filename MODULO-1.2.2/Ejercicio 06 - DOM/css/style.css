@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: palegoldenrod;
+}
+
+article{
+    margin: 1em auto;
+    width: 80%;
+}
+
+.colorRojo{
+    color: red;
+}
+
+.grande{
+    font-size: 2em;
+}

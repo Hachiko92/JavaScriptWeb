@@ -21,7 +21,9 @@ class Formulario {
         // tengo que poner .bind(this) porque el navegador considera "this" come el suyo y no encuentra
         // las variables, por esto pongo la funcion .bind(this) para hacer si que entienda que es ESTO this
         this.oDOM.fNombre.addEventListener("keyup", this.actualizarVista.bind(this));
-        this.oDOM.btnBorrar.addEventListener("click", this.actualizarVista.bind(this));
+        if (this.oDOM.btnBorrar){
+            this.oDOM.btnBorrar.addEventListener("click", this.actualizarVista.bind(this));
+        }
 
     }// fin de la funcion controller
 

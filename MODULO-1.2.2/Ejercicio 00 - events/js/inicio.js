@@ -4,9 +4,10 @@
         fNombre: document.querySelector("#first_name"),
         btnBorrar: document.querySelector("#btnBorrar"),
         spanNombre: document.querySelector("#nombre"),
-        spanCurso: document.querySelector("#curso")
+        spanCurso: document.querySelector("#curso")    
     };//fin del objeto oDOM
 
+    console.log(oDOM.btnBorrar)
     function controller () {
         oDOM.fNombre.value = 'Pepe';
         oDOM.spanNombre.innerHTML = oDOM.fNombre.value;
@@ -20,6 +21,7 @@
         // Si pongo las parentesis en la funcion, esta funcionaria cuando está leida y non espera el evento
         //oDOM.btnBorrar.addEventListener("click",actualizarVista());
         oDOM.btnBorrar.addEventListener("click",actualizarVista);
+       
 
     }// fin de la funcion controller
 
