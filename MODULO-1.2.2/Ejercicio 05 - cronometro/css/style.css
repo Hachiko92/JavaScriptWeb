@@ -3,12 +3,16 @@
 }
 
 body{
-    background-color: palegoldenrod;
+    background-color: light;
+    color: #333;
 }
 
-article{
-    margin: 1em auto;
-    width: 80%;
+article {
+    margin: 2em auto;
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid;
 }
 
 .wrap{

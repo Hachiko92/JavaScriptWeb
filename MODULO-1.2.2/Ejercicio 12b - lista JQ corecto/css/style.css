@@ -3,7 +3,8 @@
 }
 
 body{
-    background-color: palegoldenrod;
+    background-color: light;
+    color: #333;
 }
 
 .wrap {
@@ -11,5 +12,5 @@ body{
     width: 60%;
     padding: 20px;
     background-color: white;
-    border: 2px solid #434d4d;
+    border: 2px solid;
 }

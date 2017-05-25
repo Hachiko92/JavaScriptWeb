@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: lightblue;
+    color: #333;
+}
+
+.dinamic {
+    margin: 2em auto;
+    width: 60%;
+    padding: 20px;
+    border: 2px solid;
+}
+
+.wrap {
+    background-color: white;
+}
+
+.coral {
+    background-color: lightcoral;
+}
