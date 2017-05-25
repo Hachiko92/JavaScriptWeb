@@ -29,13 +29,19 @@ class Lista {
     search (){
         let nombre = prompt("Dime el nombre y el apellido");
         nombre = nombre.toLowerCase;
+        console.log(nombre)
+        let n;
         let controllo =  0;
 
-        for (let i=0 ; i < this.oLista.oTextoLow.length; i++){
-            if (nombre == this.oLista.oTextoLow[i]){
+        for (let i=0 ; i < FRASI.length; i++){
+            n = nombre.localeCompare(this.oLista.oTextoLow[i])
+            console.log("ciao2");
+            if (n == 0){
+                console.log("trovato");
                 controllo = 1;
                 continue;
             }
+            console.log("ciaone")
         }
 
         if (controllo == 1){
