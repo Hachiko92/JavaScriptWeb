@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: lightblue;
+    color: #333;
+}
+h2{
+    cursor: pointer;
+}
+.wrap {
+    background-color: white;
+    margin: 2em auto;
+    width: 60%;
+    padding: 20px;
+    border: 2px solid;
+}
+.hidden{
+    color: #333;
+}
+
+.red{
+    background-color: lightcoral;
+}
+
+.green{
+    background-color: lightgreen;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Ejercicio 16</title>
+        <meta name="author" content="Eleonora">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <!-- ********** icona **********  -->
+        <link rel="shortcut icon" href="icona.ico">
+        <!-- ********** CSS ********** -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        
+    </head>
+    <body>
+        
+        <div class="wrap">
+            <header>
+                <h1>Verifica de la contraseña</h1>
+            </header>
+
+            <form>
+                    
+                <!-- pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" -->
+                <label for="pw">Contraseña</label>
+                <input type="password" name="password" id="pw" required>
+                <div>
+                    <small id="controllo1"></small>
+                </div>
+
+                <br><br>
+
+                <label for="pw2">Repitir contraseña</label>
+                <input type="password" name="password2" id="pw2" required>
+                <div>
+                    <small id="controllo2"></small>
+                </div>
+
+                <button type="button" id="verificar">Verificar</button>
+                
+            </form>
+        </div>
+        
+        <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+        <!-- ********** JavaScript ********** -->
+        <script type="text/javascript" src="js/main.js"></script>
+        
+    </body>
+    
+</html>
