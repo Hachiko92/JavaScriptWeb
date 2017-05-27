@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Ejercicio 16</title>
+        <meta name="author" content="Eleonora">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <!-- ********** icona **********  -->
+        <link rel="shortcut icon" href="icona.ico">
+        <!-- ********** CSS ********** -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- ********** JQuery ********** -->
+        <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+        <!-- ********** JavaScript ********** -->
+        <script type="text/javascript" src="js/main.js"></script>
+        
+        
+    </head>
+    <body>
+        
+        <div class="wrap">
+            <header>
+                <h1>Ecriba sus datos</h1>
+            </header>
+
+            <form id="form">
+                    
+                
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required>
+
+                <br><br>
+
+                <label for="apellido">Apellidos</label>
+                <input type="text" name="apellido" id="apellido" required>
+
+                <button type="button" id="btnSend">Enviar</button>
+
+                <div id="resultado" class="hidden">
+                    <h2>Sus datos son:</h2>
+                    <ul class="lista">
+
+                    </ul>
+                </div>
+                
+            </form>
+        </div>
+        
+        
+    </body>
+    
+</html>
