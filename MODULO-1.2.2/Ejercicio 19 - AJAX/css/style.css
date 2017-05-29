@@ -6,16 +6,15 @@ body{
     background-color: lightblue;
     color: #333;
 }
-h2{
-    cursor: pointer;
-}
 .wrap {
     background-color: white;
     margin: 2em auto;
     width: 60%;
-    padding: 20px;
+    padding: 0 20px;
     border: 2px solid;
 }
-.gallery {
-    display: flex;
+footer{
+    width: 100%;
+    border-top: 1px solid;
+    text-align: right;
 }

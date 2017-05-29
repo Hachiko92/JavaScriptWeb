@@ -15,6 +15,8 @@ class Formulario  {
     start () {
         
         this.oBtnSend = document.querySelector("#btnSend");
+        //
+        this.oBtnSend.preventDefault();
         this.oBtnSend.addEventListener("click", this.read.bind(this));
         
     }//fin start

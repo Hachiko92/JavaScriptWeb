@@ -1,3 +1,3 @@
-# Ejercicios de la primera unidad
+# Ejercicios de la segunda unidad
 
-Ejemplos de HTML5 y CSS3
+Ejemplos de JavaScript por la Web
