@@ -3,23 +3,34 @@
 }
 
 body{
-    background-color: lightblue;
+    background-color: lightgray;
     color: #333;
-}
-h2{
-    cursor: pointer;
-}
-.wrap {
-    background-color: white;
-    margin: 2em auto;
-    width: 60%;
-    padding: 20px;
-    border: 2px solid;
 }
 .hidden {
     display: none;
 }
 
-.show{
-    display: block;
+form{
+    width: 80%;
+    margin: 2em auto;
+}
+form>fieldset{
+    background-color: lightblue;
+}
+.wrap {
+    display: flex;
+    justify-content: space-between;
+}
+fieldset{
+    width: 100%;
+}
+.columnas {
+    width: 49%;
+}
+.columnas>fieldset{
+    width: 96%;
+    margin: 2%;
+}
+span{
+    color:red;
 }
