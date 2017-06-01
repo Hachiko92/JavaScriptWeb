@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: lightblue;
+    color: #333;
+}
+.wrap {
+    background-color: white;
+    margin: 2em auto;
+    width: 60%;
+    padding: 0 20px;
+    border: 2px solid;
+    overflow: auto;
+}
+footer{
+    width: 100%;
+    border-top: 1px solid;
+    text-align: right;
+}
+img{
+    text-align: center;
+}
+.draggable{
+    margin: 0 auto;
+}
+.dialog {
+    background-color: white;
+    border: 2px solid lightgray;
+    padding: 20px;
+}
+button{
+    margin: 20px;
+}
+#image{
+    width: 40px;
+    height: 40px;
+    background-color: red;
+}

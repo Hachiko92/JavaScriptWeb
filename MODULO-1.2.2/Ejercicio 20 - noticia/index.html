@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Ejercicio 20</title>
+        <meta name="author" content="Eleonora">
+        <meta name="keywords" content="">
+        <meta name="description" content="Ejercicio 20: poner el texto que está en un span en un div a la derecha del texto">
+        
+        <!-- ********** icona **********  -->
+        <link rel="shortcut icon" href="icona.ico">
+        <!-- ********** CSS ********** -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- ********** JQuery ********** -->
+        <script src="../../node_modules/jquery/dist/jquery.js"></script>
+        <!-- ********** JavaScript ********** -->
+        <script src="js/index.js"></script>
+
+    </head>
+    <body>
+        
+        <div class="wrap">
+            
+            <header>
+                <h1>Noticia</h1>
+            </header>
+            
+            <article>
+                <h2>
+                    La NASA lanzará en 2018 la primera sonda que cruzará la atmósfera del Sol
+                </h2>
+
+                <p> 
+                    La Agencia Aeroespacial de Estados Unidos (NASA) lanzará en 2018 una sonda que se acercará 
+                    más que ningún otro instrumento espacial a la superficie solar para estudiar características 
+                    físicas de la atmósfera del astro.
+                    <br>
+                    El Solar Probe Plus <span id="texto">volará directamente hacia la corona del Sol, la atravesará por 
+                    primera vez y se acercará más que ninguna otra sonda</span>, a seis millones de kilómetros de la 
+                    superficie solar, algo extremadamente difícil.
+                    <br>
+                    En una ceremonia en la Universidad de Chicago, el jefe del programa de misiones de la NASA, 
+                    Thomas Zurbuchen, ha rebautizado la sonda con el nombre de Sonda Solar Parker, en honor a 
+                    Eugene Parker, el astrofísico que desarrollo la teoría de los vientos solares supersónicos 
+                    y de la corona solar.
+                </p>
+
+                <div id="focus" class="boxFocus">
+                    
+                </div>
+                <p>
+                    Hasta ahora, otras sondas se han acercado para examinar los vientos solares y la corona 
+                    solar, pero nunca a una distancia tan corta, algo que podría responder muchas preguntas 
+                    sobre el comportamiento de nuestra estrella aún sin resolver.
+                    <br>
+                    La sonda Parker estará diseñada para recopilar datos en un ambiente de temperaturas 
+                    extremas, con masivas cantidades de radiación y a una velocidad de 200 kilómetros por 
+                    segundo, lo que permitiría ir de la Tierra a la Luna en media hora.
+                    <br>
+                    "Simplemente hasta ahora los materiales para que esta misión fuera posible no existían", 
+                    señaló Nicola Fox, del Laboratorio de Física Aplicada de la Universidad Johns Hopkins, 
+                    responsable de desarrollar parte de los componentes de la sonda.
+                </p>
+                <p>
+                    Lanzar una sonda que impacte el Sol es, hoy por hoy, una empresa imposible. Para impactar 
+                    en la superficie solar un sonda debería acelerar hasta la misma velocidad orbital de la 
+                    Tierra alrededor del astro rey de 30 kilómetros por segundo en dirección contraria, pero 
+                    la tecnología de cohetes actual solo puede cubrir un tercio de esa velocidad.
+
+                    Para acercarse al Sol y orbitarlo a tan corta distancia, la sonda Parker será acelerada por 
+                    el Delta IV Heavy, el cohete en servicio con la mayor potencia.
+
+                    Varias sondas lanzadas desde los años sesenta han confirmado las teorías sobre el campo 
+                    magnético del Sol y la existencia de vientos solares, y han permitido observar el comportamiento 
+                    de la corona solar, que alcanza temperaturas más altas que la superficie solar.
+                </p>
+            </article>
+
+            <footer>
+                <p>Written by Eleonora Franchini</p>
+            </footer>
+        </div>
+        
+    </body>
+    
+</html>
