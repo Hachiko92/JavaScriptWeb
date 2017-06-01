@@ -1,3 +1,17 @@
+const MONTHS = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+]
 class Formulario  {
     constructor () {
         this.oDatos = [
@@ -15,14 +29,14 @@ class Formulario  {
     start () {
         
         this.oBtnSend = document.querySelector("#btnSend");
-        //
         this.oBtnSend.preventDefault();
         this.oBtnSend.addEventListener("click", this.read.bind(this));
         
     }//fin start
 
-    read (){
-        
+    read (event){
+
+        console.log("controllo 1")
         this.oDatos[0].valor = document.getElementById("correo").value;
         this.oDatos[1].valor = document.getElementById("nombre").value;
         this.oDatos[2].valor = document.getElementById("apellido").value;
@@ -117,6 +131,19 @@ class Formulario  {
 
 }// fin class Formulario
 
-document.addEventListener ("DOMContentLoaded", function (){
+function printDate (){
+    let fecha = new Date();
+    let dia = fecha.getDate();
+    let mes = fecha.getMonth();
+    let anno = fecha.getFullYear();
+
+    $("#date").html("Hoy es el " + dia + " de " + MONTHS[mes] + " " + anno);
+
+}
+
+$(function (){
+    
+    printDate ();
     new Formulario().start();
-}, false);
+
+});

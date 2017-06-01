@@ -13,11 +13,15 @@ body{
     padding: 0 20px;
     border: 2px solid;
     overflow: auto;
+    position: relative;
+    height: 600px;
 }
 footer{
     width: 100%;
     border-top: 1px solid;
     text-align: right;
+    position: absolute;
+    bottom: 0px;
 }
 img{
     text-align: center;
@@ -34,7 +38,6 @@ button{
     margin: 20px;
 }
 #image{
-    width: 40px;
-    height: 40px;
-    background-color: red;
+    position: absolute;
+    right: 50px;
 }
