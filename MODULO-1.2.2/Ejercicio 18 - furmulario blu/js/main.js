@@ -1,4 +1,4 @@
-const MONTHS = [
+const MESES = [
     "enero",
     "febrero",
     "marzo",
@@ -14,32 +14,96 @@ const MONTHS = [
 ]
 class Formulario  {
     constructor () {
+        this.oForm = "";
         this.oDatos = [
             {descripcion: "Cuenta de correo", valor: ""},
             {descripcion: "Nombre", valor: ""},
             {descripcion: "Apellido", valor: ""},
-            {descripcion: "Fecha", valor: ""},
+            {descripcion: "Fecha de nachimiento", valor: ""},
             {descripcion: "Aficiones", valor: ""}
         ];
         this.form = "";
         this.result = "";
         this.oBtnSend = "";
+
+        this.listaCursos = "";
+        this.opcionCursos = '0';
+        this.web = [
+            "JavaScript",
+            "css",
+            "php"
+        ],
+        this.sistemas = [
+            "Windowa",
+            "Linux",
+            "Machintosh"
+        ],
+        this.objectos = [
+            "piripi",
+            "css",
+            "php"
+        ]
     }
 
     start () {
-        
+        this.listaCursos = document.querySelector("#cursoElejido");
+        this.opciones();
+        this.oForm = document.querySelector("#form");
+
         this.oBtnSend = document.querySelector("#btnSend");
-        this.oBtnSend.preventDefault();
+        //this.oBtnSend.preventDefault();
         this.oBtnSend.addEventListener("click", this.read.bind(this));
+        this.oForm.addEventListener("submit", this.read.bind(this));
         
     }//fin start
 
+    opciones() {
+        
+        let aCheck = document.forms[0];
+        
+        let y=0;
+        for(let i=0 ; i<aCheck.length ; i++){
+            if(aCheck[i].checked){
+                this.opcionCursos = aCheck[i].value;
+                break;
+            }
+        }
+
+        this.listaCursos.innerHTML = "";
+
+        switch (this.opcionCursos) {
+            case 'web':
+                for(let i=0; i<this.web.length ; i++){
+                    this.listaCursos.innerHTML += '<option value="' + this.web[i] + '">' + this.web[i] + "</option>";
+                }
+                break;
+            case 'sistemas':
+                for(let i=0; i<this.sistemas.length ; i++){
+                    this.listaCursos.innerHTML += '<option value="' + this.sistemas[i] + '">' + this.sistemas[i] + "</option>";
+                }
+                break;
+            case 'objectos':
+                for(let i=0; i<this.objectos.length ; i++){
+                    this.listaCursos.innerHTML += '<option value="' + this.objectos[i] + '">' + this.objectos[i] + "</option>";
+                }
+                break;
+            default:
+                console.log("ERRORE CON LAS LISTAS!");
+                break;
+        }
+        
+    } // fin crearOpciones()
+
     read (event){
 
+        //event.preventDefault();
         console.log("controllo 1")
         this.oDatos[0].valor = document.getElementById("correo").value;
         this.oDatos[1].valor = document.getElementById("nombre").value;
         this.oDatos[2].valor = document.getElementById("apellido").value;
+        if (document.getElementById("apellido2").value != ""){
+            this.oDatos[2].valor += " " + document.getElementById("apellido2").value;
+        }
 
         let control = this.dateControl();
         console.log(control);
@@ -47,12 +111,17 @@ class Formulario  {
 
         let aCheck = document.forms[0];
         let aChecked = []
+        let controlCheked = 0;
         
         let y=0;
         for(let i=0 ; i<aCheck.length ; i++){
             if(aCheck[i].checked){
-                aChecked[y] = aCheck[i].name;
-                y++;
+                if (controlCheked != 0){
+                    aChecked[y] = aCheck[i].name;
+                    y++;
+                } else {
+                    controlCheked = 10;
+                }
             }
         }
 
@@ -72,16 +141,15 @@ class Formulario  {
             document.getElementById("compare").innerHTML = "Las dos contrasenas no son iguales"
         }
 
-    }// fin read
+    }// fin read()
 
     dateControl (){
 
         let day = document.getElementById("day").valueAsNumber;
-        let month = document.getElementById("month").valueAsNumber;
+        let month = (document.getElementById("month").valueAsNumber)-1;
         let year = document.getElementById("year").valueAsNumber;
 
         let control = 0;
-        console.log(day)
         if (isNaN(day) || isNaN(month) || isNaN(year)){
             // la fecha no es obligatoria, si el usuario no la pone
             // no hace el controlo
@@ -94,15 +162,14 @@ class Formulario  {
             }
         }else {
             let date = new Date(year, month, day);
-            
-                console.log(date.getMonth());
-                console.log(month);
 
             if (date.getMonth() != month){
                 document.getElementById("invalidDate").innerHTML = "La fecha està incorecta";
                 control = -10;
             }
             else{
+                this.oDatos[3].valor = day + " " + MESES[month] + " del " + year;
+
                 // si es por lo menos la segunda vez que se executa y
                 // antes habia un problema con la fecha, vasio el div
                 document.getElementById("invalidDate").innerHTML = "";
@@ -111,7 +178,7 @@ class Formulario  {
 
         return (control);
 
-    }//fin date
+    }//fin dateControl()
 
     print (){
         this.form = document.querySelector("#form");
@@ -123,6 +190,8 @@ class Formulario  {
                 lista[1].innerHTML += "<li>" + this.oDatos[i].descripcion + ": " + this.oDatos[i].valor + "</li>";
             }
         }
+
+
 
         this.form.className = "hidden";
         this.result.className = "";
@@ -137,7 +206,7 @@ function printDate (){
     let mes = fecha.getMonth();
     let anno = fecha.getFullYear();
 
-    $("#date").html("Hoy es el " + dia + " de " + MONTHS[mes] + " " + anno);
+    $("#date").html("Hoy es el " + dia + " de " + MESES[mes] + " " + anno);
 
 }
 

@@ -34,3 +34,7 @@ fieldset{
 span{
     color:red;
 }
+
+input[type="number"]{
+    width: 50px;
+}

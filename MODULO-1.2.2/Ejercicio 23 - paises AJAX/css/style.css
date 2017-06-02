@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: lightblue;
+    color: #333;
+}
+.wrap {
+    background-color: white;
+    margin: 2em auto;
+    width: 60%;
+    padding: 0 20px;
+    border: 2px solid;
+}
+footer{
+    width: 100%;
+    border-top: 1px solid;
+    text-align: right;
+}

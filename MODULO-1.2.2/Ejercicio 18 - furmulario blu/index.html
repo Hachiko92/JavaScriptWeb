@@ -15,7 +15,7 @@
         <!-- ********** CSS ********** -->
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <!-- ********** JQuery ********** -->
-        <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="jquery/jquery.js"></script>
         <!-- ********** JavaScript ********** -->
         <script type="text/javascript" src="js/main.js"></script>
         
@@ -34,8 +34,8 @@
                 <!-- inicio primera columna -->
                 <div class="columnas">
                 
-                    <fieldset>
-                        <legend>Identificaciòn</legend>
+                    <fieldset> <!-- identificación -->
+                        <legend>Identificación</legend>
                         <label for="correo">Correo</label>
                         <input type="email" name="correo" id="correo" required="required"><span>*</span>
 
@@ -56,12 +56,27 @@
                         </div>
 
                     </fieldset><!-- fin identificaciòn -->
+
+                    <fieldset> <!-- radio button -->
+                        <input type="radio" name="curso" value="web" checked> Programador Web
+                        <br>
+                        <input type="radio" name="curso" value="sistemas"> Programador de Sistemas
+                        <br>
+                        <input type="radio" name="curso" value="objectos"> Programador de Objectos
+                        
+                        <br><br>
+
+                        <select name="cursoElejido" id="cursoElejido">
+
+                        </select>
+
+                    </fieldset> <!-- fin -->
                 
-                    <fieldset>
+                    <fieldset><!-- botones -->
                         
                         <!-- type="button" no utiliza las convalidaciones html (required, etc) -->
                         <button type="submit" id="btnSend">Enviar</button>
-                        <button type="reset" id="btnReset">Restablecer los datos</button>
+                        <button type="reset" id="btnReset">Restablecer los datos</button> 
 
                     </fieldset><!-- fin botones -->
                 </div> <!-- fin primera columna -->
@@ -80,8 +95,10 @@
 
                         <br><br>
 
-                        <label for="apellido2">Segundo apellidos</label>
+                        <label for="apellido2">Segundo apellido</label>
                         <input type="text" name="apellido2" id="apellido2">
+
+                        <br><br>
 
                         <fieldset>
                             <label for="day">Dia</label>
