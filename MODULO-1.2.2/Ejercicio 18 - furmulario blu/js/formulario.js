@@ -38,8 +38,8 @@ class Formulario  {
 
         this.oBtnSend = document.querySelector("#btnSend");
         //this.oBtnSend.preventDefault();
-        this.oBtnSend.addEventListener("click", this.read.bind(this));
-        this.oForm.addEventListener("submit", this.read.bind(this));
+        this.oBtnSend.addEventListener("click", this.comprobarValidacion.bind(this));
+        this.oForm.addEventListener("submit", this.comprobarValidacion.bind(this));
         
     }//fin start
 
@@ -80,10 +80,25 @@ class Formulario  {
         
     } // fin crearOpciones()
 
-    read (event){
-
+    comprobarValidacion (event){
         event.preventDefault();
-        console.log("controllo 1")
+
+        for (let i = 0; i < this.oForm.length ; i++){
+            if (this.oForm[i].checkValidity() == false){
+                alert(this.oForm[i].validationMessage + ": " + this.oForm[i].name);
+                
+                //this.oForm[i].target.setCustomValidity(this.oForm[i].validationMessage);
+                
+                break;
+            } 
+        }
+
+        this.read();
+
+    } // fin comprobarValidacion()
+
+    read (){
+
         this.oDatos[0].valor = document.getElementById("correo").value;
         this.oDatos[1].valor = document.getElementById("nombre").value;
         this.oDatos[2].valor = document.getElementById("apellido").value;
