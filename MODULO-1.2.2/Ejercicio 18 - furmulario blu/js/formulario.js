@@ -3,6 +3,7 @@ class Formulario  {
         this.oForm = "";
         this.oDatos = [
             {descripcion: "Cuenta de correo", valor: ""},
+            {descripcion: "Contraseña", valor: ""},
             {descripcion: "Nombre", valor: ""},
             {descripcion: "Apellido", valor: ""},
             {descripcion: "Fecha de nachimiento", valor: ""},
@@ -39,6 +40,7 @@ class Formulario  {
     start () {
         this.listaCursos = document.querySelector("#cursoElejido");
         this.opciones();
+
         this.oForm = document.querySelector("#form");
         this.oBtnSend = document.querySelector("#btnSend");
         this.web = document.querySelector("#web");
@@ -54,9 +56,12 @@ class Formulario  {
     }//fin start
 
     opciones() {
+        //se crea de manera dinamica la lista de los cursos
         
         let aCheck = document.forms[0];
         
+        // Como un radiobutton està seleccionado por default, el bucle for se bloquea
+        // cuando encuentra un elemento "checked"
         let y=0;
         for(let i=0 ; i<aCheck.length ; i++){
             if(aCheck[i].checked){
@@ -93,6 +98,11 @@ class Formulario  {
         event.preventDefault();
         let control = 0;
 
+        /**
+         *  las validaciones de HTML5 tengan problemas con las clases JavaScipt,
+         *  para no to tener redondanza de codigo que ya existe utilizo .checkValidity()
+         *  para poder utilizar la validacion de HTML5
+         */ 
         for (let i = 0; i < this.oForm.length ; i++){
             if (this.oForm[i].checkValidity() == false){
                 switch(this.oForm[i].name){
@@ -141,22 +151,22 @@ class Formulario  {
     read (){
 
         this.oDatos[0].valor = document.getElementById("correo").value;
-        this.oDatos[1].valor = document.getElementById("nombre").value;
-        this.oDatos[2].valor = document.getElementById("apellido").value;
-        this.oDatos[4].valor = document.getElementById("cursoElejido").value;
+        this.oDatos[2].valor = document.getElementById("nombre").value;
+        this.oDatos[3].valor = document.getElementById("apellido").value;
+        this.oDatos[5].valor = document.getElementById("cursoElejido").value;
 
         if (document.getElementById("apellido2").value != ""){
-            this.oDatos[2].valor += " " + document.getElementById("apellido2").value;
+            this.oDatos[3].valor += " " + document.getElementById("apellido2").value;
         }
 
         // como puede ser que no es la primera vez que se hace el controlo, 
         // se elimina el posible mensaje de error de las password
         document.getElementById("compare").innerHTML = " "
 
+        // controlo de la fecha
         let control = this.dateControl();
-        console.log(control);
-        console.log(typeof(control));
 
+        // lectura de los checkbox "aficiones"
         let aCheck = document.forms[0];
         let aChecked = []
         let controlCheked = 0;
@@ -173,15 +183,14 @@ class Formulario  {
             }
         }
 
-        this.oDatos[5].valor = aChecked.toString();
+        this.oDatos[6].valor = aChecked.toString();
 
-
-
+        // controlo de las contrasenas
         let pw = document.getElementById("pw").value;
         let pw2 = document.getElementById("pw2").value;
 
-        // controlo de las contrasenas
         if (pw == pw2 && control == 0){
+            this.oDatos[1].valor = pw;
             this.print();
         }
         else{
@@ -233,15 +242,15 @@ class Formulario  {
         let lista = document.getElementById("resultado").children;
 
         for (let i=0 ; i<this.oDatos.length ; i++){
+            // si un campo està vasio simplemente no serà inviado
             if(this.oDatos[i].valor != ""){
                 lista[1].innerHTML += "<li>" + this.oDatos[i].descripcion + ": " + this.oDatos[i].valor + "</li>";
             }
         }
 
-
-
+        // para simular el invio se ensconde el formulario y se muestra los resultados
         this.form.className = "hidden";
-        this.result.className = "";
+        this.result.classList.remove("hidden");
     }
 
 

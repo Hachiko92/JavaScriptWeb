@@ -24,139 +24,143 @@
     </head>
     <body>
         
+        <header>
+            <h1>Formulario</h1>
+        </header>
+
         <form method="PUT" id="form">
 
             <!-- inicio fieldset wrap -->    
             <fieldset>
-            <legend>Datos del alumno</legend>
-            <!-- los fieldset no pueden ser flex, se puede utilizar otro div -->
-            <div  class="wrap">                  
+                <legend>Datos del alumno</legend>
+                <!-- los fieldset no pueden ser flex, se puede utilizar otro div -->
+                <div  class="wrap">                  
 
-                <!-- inicio primera columna -->
-                <div class="columnas">
-                
-                    <fieldset> <!-- identificación -->
-                        <legend>Identificación</legend>
-                        <label for="correo">Cuenta de correo</label>
-                        <input type="email" name="correo" id="correo" required="required"><span>*</span>
-
-                        <br><br>
-
-                        <label for="pw">Introduzca su clave de acceso</label>
-                        <input type="password" name="pw" id="pw" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
-                        required><span>*</span>
-                        
-                        <br><br>
-
-                        <label for="pw2">Repita la clave de acceso</label>
-                        <input type="password" name="pw2" id="pw2" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
-                        required><span>*</span>
-                        <br>
-                        <small class="pw">
-                            La contraseña debe contener por lo menos:
-                            <br>
-                            8 caracteres, una mayuscula y un numero.
-                        </small>
-
-                        <br><br>
-
-                        <div id="compare">
-
-                        </div>
-
-                    </fieldset><!-- fin identificaciòn -->
-
-                    <fieldset> <!-- curso -->
-                        <legend>Curso</legend>
-                        <input type="radio" name="curso" value="web" id="web" checked> Programador Web
-                        <br>
-                        <input type="radio" name="curso" value="sistemas" id="sistemas"> Programador de Sistemas
-                        <br>
-                        <input type="radio" name="curso" value="objectos" id="objetos"> Programador de Objectos
-                        
-                        <br><br>
-
-                        <select name="curso" id="cursoElejido" multiple required>
-
-                        </select>
-
-                    </fieldset> <!-- fin curso -->
-                
-                    <fieldset><!-- botones -->
-                        
-                        <!-- type="button" no utiliza las convalidaciones html (required, etc) -->
-                        <button type="submit" id="btnSend">Enviar datos</button>
-                        <button type="reset" id="btnReset">Restablecer valores</button> 
-
-                    </fieldset><!-- fin botones -->
-                </div> <!-- fin primera columna -->
-
-                <!-- inicio segunda columna -->
-                <div class="columnas">
-                    <fieldset>
-                        <legend>Datos Personales</legend>
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" required><span>*</span>
-
-                        <br><br>
-
-                        <label for="apellido">Primer apellido</label>
-                        <input type="text" name="apellido" id="apellido" required><span>*</span>
-
-                        <br><br>
-
-                        <label for="apellido2">Segundo apellido</label>
-                        <input type="text" name="apellido2" id="apellido2">
-
-                        <br><br>
-
-                        <fieldset>
-                            <legend>Fecha de nacimiento</legend>
-                            <br>
-                            <label for="day">Dia</label>
-                            <input type="number" name="day" id="day" size="2" min="1" max="31">
-                            <label for="month">Més</label>
-                            <input type="number" name="month" id="month" size="2" min="1" max="12">
-                            <label for="year">Año</label>
-                            <!-- Se supone que el alumno tenga por lo meno 6 años -->
-                            <input type="number" name="year" id="year" size="4" min="1900" max="2011">
+                    <!-- inicio primera columna -->
+                    <div class="columnas">
+                    
+                        <fieldset> <!-- identificación -->
+                            <legend>Identificación</legend>
+                            <label for="correo">Cuenta de correo</label>
+                            <input type="email" name="correo" id="correo" required="required"><span>*</span>
 
                             <br><br>
 
-                            <!-- si la fecha es invalida lo escribe aqui -->
-                            <div id="invalidDate">
+                            <label for="pw">Introduzca su clave de acceso</label>
+                            <input type="password" name="pw" id="pw" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+                            required><span>*</span>
+                            
+                            <br><br>
+
+                            <label for="pw2">Repita la clave de acceso</label>
+                            <input type="password" name="pw2" id="pw2" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+                            required><span>*</span>
+                            <br>
+                            <small class="pw">
+                                La contraseña debe contener por lo menos:
+                                <br>
+                                8 caracteres, una mayuscula y un numero.
+                            </small>
+
+                            <br><br>
+
+                            <div id="compare">
+
                             </div>
 
+                        </fieldset><!-- fin identificaciòn -->
+
+                        <fieldset> <!-- curso -->
+                            <legend>Curso</legend>
+                            <input type="radio" name="curso" value="web" id="web" checked> Programador Web
+                            <br>
+                            <input type="radio" name="curso" value="sistemas" id="sistemas"> Programador de Sistemas
+                            <br>
+                            <input type="radio" name="curso" value="objectos" id="objetos"> Programador de Objectos
+                            
+                            <br><br>
+
+                            <select name="curso" id="cursoElejido" multiple required>
+
+                            </select> <span>*</span>
+
+                        </fieldset> <!-- fin curso -->
+                    
+                        <fieldset><!-- botones --> 
+                            
+                            <!-- type="button" no utiliza las convalidaciones html (required, etc) -->
+                            <button type="submit" id="btnSend">Enviar datos</button>
+                            <button type="reset" id="btnReset">Restablecer valores</button> 
+
+                        </fieldset><!-- fin botones -->
+                    </div> <!-- fin primera columna -->
+
+                    <!-- inicio segunda columna -->
+                    <div class="columnas">
+                        <fieldset><!-- Datos Personales -->
+                            <legend>Datos Personales</legend>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" required><span>*</span>
+
+                            <br><br>
+
+                            <label for="apellido">Primer apellido</label>
+                            <input type="text" name="apellido" id="apellido" required><span>*</span>
+
+                            <br><br>
+
+                            <label for="apellido2">Segundo apellido</label>
+                            <input type="text" name="apellido2" id="apellido2">
+
+                            <br><br>
+
+                            <fieldset>
+                                <legend>Fecha de nacimiento</legend>
+                                <br>
+                                <label for="day">Dia</label>
+                                <input type="number" name="day" id="day" size="2" min="1" max="31">
+                                <label for="month">Més</label>
+                                <input type="number" name="month" id="month" size="2" min="1" max="12">
+                                <label for="year">Año</label>
+                                <!-- Se supone que el alumno tenga por lo meno 6 años -->
+                                <input type="number" name="year" id="year" size="4" min="1900" max="2011">
+
+                                <br><br>
+
+                                <!-- si la fecha es invalida lo escribe aqui -->
+                                <div id="invalidDate">
+                                </div>
+
+                            </fieldset><!-- fin fecha -->
+
+                        </fieldset><!-- fin Datos Personales -->
+
+                        <fieldset><!-- Aficiònes -->
+
+                            <legend>Aficiònes</legend>
+                            <input type="checkbox" name="Musica"> Musica
+                            <input type="checkbox" name="Viajar"> Viajar
+                            <input type="checkbox" name="Pintura"> Pintura
+                            <input type="checkbox" name="Fotografia"> Fotografia
+
+                            <br>
+
+                            <input type="checkbox" name="Cine"> Cine
+                            <input type="checkbox" name="Lectura"> Lectura
+                            <input type="checkbox" name="Deporte"> Deporte
+                            <input type="checkbox" name="Baile"> Baile
+
+                        </fieldset><!-- fin aficiones -->
+
+                        <fieldset><!-- fecha -->
+                            <p id="date">
+                            </p>
                         </fieldset><!-- fin fecha -->
+                    </div><!-- fin segunda columna -->
 
-                    </fieldset><!-- fin Datos Personales -->
-
-                    <fieldset>
-
-                        <legend>Aficiònes</legend>
-                        <input type="checkbox" name="Musica"> Musica
-                        <input type="checkbox" name="Viajar"> Viajar
-                        <input type="checkbox" name="Pintura"> Pintura
-                        <input type="checkbox" name="Fotografia"> Fotografia
-
-                        <br>
-
-                        <input type="checkbox" name="Cine"> Cine
-                        <input type="checkbox" name="Lectura"> Lectura
-                        <input type="checkbox" name="Deporte"> Deporte
-                        <input type="checkbox" name="Baile"> Baile
-
-                    </fieldset><!-- fin aficiones -->
-
-                    <fieldset>
-                        <p id="date">
-                        </p>
-                    </fieldset><!-- fin fecha -->
-                </div><!-- fin segunda columna -->
-
-            </div><!-- fin wrap -->
-            
-            <p><span>*</span>requerido</p>
+                </div><!-- fin wrap -->
+                
+                <p><span>*</span>requerido</p>
 
             </fieldset><!-- fin fieldset wrap -->
 
@@ -171,6 +175,9 @@
             </ul>
         </div>
         
+        <footer>
+            Eleonora Franchini
+        </footer>
         
     </body>
     

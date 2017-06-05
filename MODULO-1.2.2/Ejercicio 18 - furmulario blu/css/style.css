@@ -7,6 +7,10 @@ body{
     color: #333;
     font-family: Arial, Helvetica, sans-serif;
 }
+header, footer, .resultados {
+    width: 80%;
+    margin: 2em auto;
+}
 
 /* clases por el formulario */
 .wrap {
@@ -15,7 +19,7 @@ body{
 }
 form{
     width: 80%;
-    margin: 2em auto;
+    margin: 0 auto;
     background-color: #004FFF;
     color: white;
 }
@@ -56,4 +60,5 @@ form>fieldset>p{
 .resultados{
     background-color: white;
     border: 2px solid grey;
+    padding: 0 2%;
 }
