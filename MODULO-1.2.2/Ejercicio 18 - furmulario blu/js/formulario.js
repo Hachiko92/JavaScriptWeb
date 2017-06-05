@@ -7,7 +7,7 @@ class Formulario  {
             {descripcion: "Nombre", valor: ""},
             {descripcion: "Apellido", valor: ""},
             {descripcion: "Fecha de nachimiento", valor: ""},
-            {descripcion: "Curso Elejido", valor: ""},
+            {descripcion: "Curso elejido", valor: ""},
             {descripcion: "Aficiones", valor: ""}
         ];
         this.form = "";
