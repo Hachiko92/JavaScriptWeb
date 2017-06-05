@@ -5,21 +5,23 @@
 body{
     background-color: lightgray;
     color: #333;
-}
-.hidden {
-    display: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-form{
-    width: 80%;
-    margin: 2em auto;
-}
-form>fieldset{
-    background-color: lightblue;
-}
+/* clases por el formulario */
 .wrap {
     display: flex;
     justify-content: space-between;
+}
+form{
+    width: 80%;
+    margin: 2em auto;
+    background-color: #004FFF;
+    color: white;
+}
+legend{
+    background-color: #00287F;
+    border: 1px solid white;
 }
 fieldset{
     width: 100%;
@@ -31,10 +33,27 @@ fieldset{
     width: 96%;
     margin: 2%;
 }
-span{
-    color:red;
+.fecha{
+    margin-top: 3%;
 }
-
+span{
+    color: lightcoral;
+}
 input[type="number"]{
     width: 50px;
+}
+form>fieldset>p{
+    text-align: right;
+}
+.pw{
+    margin-top: 5px;
+}
+
+/* clases por los resultados */
+.hidden {
+    display: none;
+}
+.resultados{
+    background-color: white;
+    border: 2px solid grey;
 }

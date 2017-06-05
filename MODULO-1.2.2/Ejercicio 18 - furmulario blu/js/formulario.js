@@ -6,8 +6,8 @@ class Formulario  {
             {descripcion: "Nombre", valor: ""},
             {descripcion: "Apellido", valor: ""},
             {descripcion: "Fecha de nachimiento", valor: ""},
-            {descripcion: "Aficiones", valor: ""},
-            {descripcion: "Curso Elejido", valor: ""}
+            {descripcion: "Curso Elejido", valor: ""},
+            {descripcion: "Aficiones", valor: ""}
         ];
         this.form = "";
         this.result = "";
@@ -20,14 +20,14 @@ class Formulario  {
         this.listaCursos = "";
         this.opcionCursos = '0';
         this.listaWeb = [
-            "JavaScript",
+            "Html",
             "css",
-            "php"
+            "JavaScript",
+            "PHP"
         ],
         this.listaSistemas = [
             "Windows",
-            "Linux",
-            "Machintosh"
+            "Linux"
         ],
         this.listaObjectos = [
             "c",
@@ -95,9 +95,38 @@ class Formulario  {
 
         for (let i = 0; i < this.oForm.length ; i++){
             if (this.oForm[i].checkValidity() == false){
-                alert(this.oForm[i].validationMessage + ": " + this.oForm[i].name);
+                switch(this.oForm[i].name){
+                    case 'correo':
+                        alert("Correo electrónico: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'nombre':
+                        alert("Nombre: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'apellido':
+                        alert("Apellido: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'apellido2':
+                        alert("Segundo apellido: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'pw':
+                    case 'pw2':
+                        alert("Contraseña: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'day':
+                        alert("Dìa: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'month':
+                        alert("Més: " + this.oForm[i].validationMessage);
+                        break;
+                    case 'year':
+                        alert("Año: " + this.oForm[i].validationMessage);
+                        break;
+                    default:
+                        alert(this.oForm[i].name + ": " + this.oForm[i].validationMessage);
+                        //this.oForm[i].triggerError(this.oForm[i].validationMessage)
+                        //this.oForm[i].setCustomValidity(this.oForm[i].validationMessage);
+                }
                 
-                //this.oForm[i].target.setCustomValidity(this.oForm[i].validationMessage);
                 control= -10;
                 break;
             }
@@ -114,11 +143,15 @@ class Formulario  {
         this.oDatos[0].valor = document.getElementById("correo").value;
         this.oDatos[1].valor = document.getElementById("nombre").value;
         this.oDatos[2].valor = document.getElementById("apellido").value;
-        this.oDatos[5].valor = document.getElementById("cursoElejido").value;
+        this.oDatos[4].valor = document.getElementById("cursoElejido").value;
 
         if (document.getElementById("apellido2").value != ""){
             this.oDatos[2].valor += " " + document.getElementById("apellido2").value;
         }
+
+        // como puede ser que no es la primera vez que se hace el controlo, 
+        // se elimina el posible mensaje de error de las password
+        document.getElementById("compare").innerHTML = " "
 
         let control = this.dateControl();
         console.log(control);
@@ -140,14 +173,13 @@ class Formulario  {
             }
         }
 
-        this.oDatos[4].valor = aChecked.toString();
+        this.oDatos[5].valor = aChecked.toString();
 
 
 
         let pw = document.getElementById("pw").value;
         let pw2 = document.getElementById("pw2").value;
 
-        console.log (control);
         // controlo de las contrasenas
         if (pw == pw2 && control == 0){
             this.print();

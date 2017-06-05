@@ -37,18 +37,26 @@
                 
                     <fieldset> <!-- identificación -->
                         <legend>Identificación</legend>
-                        <label for="correo">Correo</label>
+                        <label for="correo">Cuenta de correo</label>
                         <input type="email" name="correo" id="correo" required="required"><span>*</span>
 
                         <br><br>
 
-                        <label for="pw">Password</label>
-                        <input type="password" name="pw" id="pw" required><span>*</span>
+                        <label for="pw">Introduzca su clave de acceso</label>
+                        <input type="password" name="pw" id="pw" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+                        required><span>*</span>
                         
                         <br><br>
 
-                        <label for="pw2">Password</label>
-                        <input type="password" name="pw2" id="pw2" required><span>*</span>
+                        <label for="pw2">Repita la clave de acceso</label>
+                        <input type="password" name="pw2" id="pw2" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+                        required><span>*</span>
+                        <br>
+                        <small class="pw">
+                            La contraseña debe contener por lo menos:
+                            <br>
+                            8 caracteres, una mayuscula y un numero.
+                        </small>
 
                         <br><br>
 
@@ -58,7 +66,8 @@
 
                     </fieldset><!-- fin identificaciòn -->
 
-                    <fieldset> <!-- radio button -->
+                    <fieldset> <!-- curso -->
+                        <legend>Curso</legend>
                         <input type="radio" name="curso" value="web" id="web" checked> Programador Web
                         <br>
                         <input type="radio" name="curso" value="sistemas" id="sistemas"> Programador de Sistemas
@@ -67,17 +76,17 @@
                         
                         <br><br>
 
-                        <select name="curso" id="cursoElejido" required>
+                        <select name="curso" id="cursoElejido" multiple required>
 
                         </select>
 
-                    </fieldset> <!-- fin -->
+                    </fieldset> <!-- fin curso -->
                 
                     <fieldset><!-- botones -->
                         
                         <!-- type="button" no utiliza las convalidaciones html (required, etc) -->
-                        <button type="submit" id="btnSend">Enviar</button>
-                        <button type="reset" id="btnReset">Restablecer los datos</button> 
+                        <button type="submit" id="btnSend">Enviar datos</button>
+                        <button type="reset" id="btnReset">Restablecer valores</button> 
 
                     </fieldset><!-- fin botones -->
                 </div> <!-- fin primera columna -->
@@ -102,12 +111,15 @@
                         <br><br>
 
                         <fieldset>
+                            <legend>Fecha de nacimiento</legend>
+                            <br>
                             <label for="day">Dia</label>
                             <input type="number" name="day" id="day" size="2" min="1" max="31">
                             <label for="month">Més</label>
                             <input type="number" name="month" id="month" size="2" min="1" max="12">
                             <label for="year">Año</label>
-                            <input type="number" name="year" id="year" size="4" min="1900" max="2001">
+                            <!-- Se supone que el alumno tenga por lo meno 6 años -->
+                            <input type="number" name="year" id="year" size="4" min="1900" max="2011">
 
                             <br><br>
 
@@ -142,15 +154,17 @@
                     </fieldset><!-- fin fecha -->
                 </div><!-- fin segunda columna -->
 
-            </div>
+            </div><!-- fin wrap -->
+            
+            <p><span>*</span>requerido</p>
+
             </fieldset><!-- fin fieldset wrap -->
 
-            <p>*requerido</p>
 
         </form>
 
-        <!-- siìmulacciòn datos enviados -->
-        <div id="resultado" class="hidden">
+        <!-- simulacciòn datos enviados -->
+        <div id="resultado" class="hidden resultados">
             <h2>Sus datos son:</h2>
             <ul class="lista">
 
