@@ -161,7 +161,7 @@ class Formulario  {
 
         // como puede ser que no es la primera vez que se hace el controlo, 
         // se elimina el posible mensaje de error de las password
-        document.getElementById("compare").innerHTML = " "
+        document.getElementById("compare").innerHTML = ""
 
         // controlo de la fecha
         let control = this.dateControl();
@@ -224,7 +224,7 @@ class Formulario  {
                 control = -10;
             }
             else{
-                this.oDatos[3].valor = day + " " + MESES[month] + " del " + year;
+                this.oDatos[4].valor = day + " " + MESES[month] + " del " + year;
 
                 // si es por lo menos la segunda vez que se executa y
                 // antes habia un problema con la fecha, vasio el div
